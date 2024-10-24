@@ -1,0 +1,92 @@
+
+///------------- Drivermanger and Connection integration with datbase
+
+//String url = "jdbc:mysql://localhost:3306/mydatabase";
+////jdbc:mysql://localhost:3306/?user=root
+//String user = "root";
+//String pass = "abhijeet@2002";
+//String Query =
+//        "update emp set name='abhibaby',salary=343.00 where id = 1;";
+//
+//// connecting driver
+//        try {
+//
+//                Class.forName("com.mysql.jdbc.Driver");
+//            System.out.println("Connection is done");
+//        }  catch (ClassNotFoundException e) {
+//        System.out.println(e.getMessage());
+//        }
+
+
+
+
+
+
+//-----------------  Crud Operation 1 Retriving Database --------------------
+//ResultSet rs = st.executeQuery(Query);
+//            System.out.println("QueryExecute Succesfully");
+//            while(rs.next()){
+//        System.out.println("userid "+rs.getInt("id")+ " Name " + rs.getString("name") + " JOb " +rs.getString("job"));
+//        }
+
+// --------------- Crud Operation 2 Inserting into database -----------------
+
+//Statement st = con.createStatement();
+//            try{
+//
+//String data = "INSERT INTO emp(id,name,job,salary) VALUES (3,'MAHESH','UI',3432.33);";
+//            st.executeUpdate(data);
+//                System.out.println("Data is inserted Succesfully");
+//            }catch (Exception e){
+//        System.out.println(e.getMessage());
+//        }
+
+
+// The prepairedStatement for ? insertion
+//String data = "INSERT INTO emp(id,name,job,salary) VALUES (?,?,?,?);";
+//PreparedStatement st = con.prepareStatement(data); ----------------- needed to pass query in con method
+//                    st.setInt(1,5);
+//                    st.setString(2,"Abhishek");
+//                    st.setString(3,"Chemical");
+//                    st.setDouble(4,99999.0);
+//                    st.executeUpdate(); ---------------- only execute the statement
+
+
+// ------------------ Crud Operation 3 Deleting the data from database ----------------------
+
+//            try {
+//                      Connection con = DriverManager.getConnection(url, user, pass);
+//                      System.out.println("Database is connected");
+//                      String data = "delete from emp where id = 2;";
+//                      Statement st = con.createStatement();
+//                      int row = st.executeUpdate(data);
+//                  if(row > 0){
+//                      System.out.println("Delected afftect row" + row);
+//                      }
+//                  else{
+//                    System.out.println("Deleted failed!!!");
+//                    }
+//          }catch (Exception e) {
+//                      System.out.println(e.getMessage());
+//                     }
+
+
+// ------------------ Crud 4 Updating the data from database----------------------------
+//
+//            try {
+//Connection con = DriverManager.getConnection(url, user, pass);
+//                      System.out.println("Database is connected");
+//
+//Statement st = con.createStatement();
+//int row = st.executeUpdate(Query);
+//                  if(row > 0){
+//        System.out.println("updated afftect row" + row);
+//                      }
+//                              else{
+//                              System.out.println("update failed!!!");
+//                    }
+//                            }catch (Exception e) {
+//        System.out.println(e.getMessage());
+//
+//        }
+//
