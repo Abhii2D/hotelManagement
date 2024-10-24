@@ -1,0 +1,36 @@
+   ..................Inserting the Data ........................
+   try {
+            Connection con = DriverManager.getConnection(url, user, pass);
+            String sql = "insert into reservation(Reservation_id,Guest_name,Room_number,Contact_number,Reservation_Date) values(?,?,?,?,?);";
+            PreparedStatement ps = con.prepareStatement(sql);
+            System.out.println("Enter the id : ");
+            int id = sc.nextInt();
+            System.out.println("Enter the Name : ");
+            String name = sc.next();
+            System.out.println("Enter the Room Number : ");
+            int room = sc.nextInt();
+            System.out.println("Enter the contact Number : ");
+            String contact = sc.next();
+
+
+            ps.setInt(1, id);
+            ps.setString(2, name);
+            ps.setInt(3, room);
+            ps.setString(4, contact);
+            ps.setTimestamp(5, new Timestamp(System.currentTimeMillis()));
+            ps.executeUpdate();
+
+            ps.close();
+            con.close();
+            System.out.println("Data is inserted Succesfully");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+   ..................Inserting the Data PrepairedStatement interface ........................
+
+
+   .....................Updating the data prepairedstatement interface ......................
+
+
+   .....................Updating the data prepairedstatement interface......................
